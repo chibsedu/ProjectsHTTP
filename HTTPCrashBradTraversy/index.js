@@ -7,7 +7,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.get('/', (req, res) => {
-    res.send('Hello from Express');
+    // res.send('Hello from Express');
+    // res.send(req.header('host'));
+    res.send(req.rawHeaders);
 });
 
-app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`))
+
+app.listen(PORT, () => console.log(`Example app listening on port ${PORT}`))
