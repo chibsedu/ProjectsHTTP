@@ -11,6 +11,7 @@ const server = http.createServer(function(req, res){
             res.write('File not found');
         }else{
             res.write(data);
+
         }
         res.end();
     });

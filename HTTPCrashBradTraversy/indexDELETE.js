@@ -6,7 +6,14 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use(express.static('public'));
+app.delete('/apost/:id', (req, res) => {
+    // DATABASE STUFF
+
+    res.json({ msg: `Post ${req.params.id} deleted` });
+
+});
+
+
 
 
 app.listen(PORT, () => console.log(`Example app listening on port ${PORT}`))
